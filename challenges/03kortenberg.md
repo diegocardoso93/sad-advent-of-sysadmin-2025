@@ -24,7 +24,9 @@ The "Check My Solution" button runs the script `/home/admin/agent/check.sh`, whi
 
 <details>
 <summary>Solution</summary>
+  
 ```
+
 # 1) Backup do /etc/profile antes de alterar
 sudo cp /etc/profile /root/etc_profile.bak.$(date +%s)
 
@@ -56,6 +58,7 @@ sudo -iu admin
 umask
 sudo -iu admin /home/admin/agent/check.sh
 # (no terminal interativo usei: sudo -iu admin /home/admin/agent/check.sh que retornou OK)
+
 ```
 
 ## Por que cada passo foi feito (explicação)
@@ -69,7 +72,9 @@ sudo -iu admin /home/admin/agent/check.sh
 7. **Verificação final** — conferi o `umask` ativo na sessão do `admin` e rodei `/home/admin/agent/check.sh`, que retornou `OK`, confirmando que o teste automático passou.
 
 </details>
+
 ---
 
 
 [⬅️ Back to Advent of Sysadmin 2025 README](../README.md)
+
