@@ -4,6 +4,8 @@ The **Advent of Sysadmin** is a 12-day [Advent calendar](https://en.wikipedia.or
 
 Each day, there will be an Advent of Sysadmin scenario.
 
+[https://sadservers.com/advent](https://sadservers.com/advent)
+
 ---
 
 ## 📅 Challenges
@@ -15,3 +17,4 @@ Each day, there will be an Advent of Sysadmin scenario.
 | 2025-12-03 | **[Kortenberg: Can't touch this!](challenges/kortenberg.md)** | Easy |
 
 ---
+
