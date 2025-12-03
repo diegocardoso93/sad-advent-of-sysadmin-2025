@@ -1,25 +1,26 @@
-# 🧩 Challenge: Kortenberg: Can't touch this!
+# 🧩 Challenge: Marseille: Rocky Security
 
 | Property | Value |
 | :--- | :--- |
-| **Day** | 2025-12-03 |
-| **Level** | Easy |
+| **Day** | 2025-12-02 |
+| **Level** | Medium |
 | **Type** | Fix |
 | **Time to Solve** | 15 minutes |
 | **Access** | Email |
 
 ## 📝 Description
 
-Is "All I want for Christmas is you" already everywhere? A bit unrelated, someone messed up the permissions in this server, the *admin* user can't list new directories and can't write into new files. Fix the issue.
+As the Christmas shopping season approaches, the security team has asked Mary and John to implement more security measures. Unfortunately, this time they have broken the LAMP stack; the frontend is unable to get an answer from upstream, thus they need your help again to fix it.
 
-> **NOTE:** Besides solving the problem in your current admin shell session, you need to fix it permanently, as in a new login shell for user admin (like the one initiated by the scenario checker) should have the problem fixed as well.
+The application should be able to serve the content from the webserver.
+
+> **Note for Pro users:** Direct SSH access is not available (yet) for this scenario.
 
 ## ✅ Test
 
-The *admin* user in a separate Bash login session should be able to create a new directory in your `/home/admin` directory, as well as being able to create a file into this new directory and add text into the new file.
+* `curl localhost | head -n1` returns `SadServers - LAMP Stack`
 
 The "Check My Solution" button runs the script `/home/admin/agent/check.sh`, which you can see and execute.
-
 
 
 <details>
@@ -94,6 +95,5 @@ With the port corrected and SELinux updated, the `admin` user can now:
 </details>
 
 ---
-
 
 [⬅️ Back to Advent of Sysadmin 2025 README](../README.md)
