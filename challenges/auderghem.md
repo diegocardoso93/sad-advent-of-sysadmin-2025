@@ -27,9 +27,8 @@ The Nginx container must redirect the traffic to the *statichtml1* and *staticht
 The "Check My Solution" button runs the script `/home/admin/agent/check.sh`, which you can see and execute.
 
 <details>
-<summary>Solution ▼</summary>
+<summary>Solution</summary>
 
-## 💡 Solution Description: Auderghem Containers Miscommunication
 
 ### 1\. Problem Identification and Diagnosis
 
@@ -144,10 +143,7 @@ The Nginx container can now correctly resolve the target containers and proxy th
 
 </details>
 
-
-The "Check My Solution" button runs the script `/home/admin/agent/check.sh`, which you can see and execute.
-
-
 ---
 
 [⬅️ Back to Advent of Sysadmin 2025 README](../README.md)
+
