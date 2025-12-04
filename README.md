@@ -15,6 +15,7 @@ Each day, there will be an Advent of Sysadmin scenario.
 | 2025-12-01 | **[Auderghem: containers miscommunication](challenges/01auderghem.md)** | Medium |
 | 2025-12-02 | **[Marseille: Rocky Security](challenges/02marseille.md)** | Medium |
 | 2025-12-03 | **[Kortenberg: Can't touch this!](challenges/03kortenberg.md)** | Easy |
+| 2025-12-03 | **[Woluwe: Too many images](challenges/04woluwe.md)** | Easy |
 
 ---
 
