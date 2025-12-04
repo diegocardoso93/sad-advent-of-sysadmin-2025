@@ -29,10 +29,10 @@ However, **all but one** of these images contain a typo introduced by a develope
 <details>
 <summary>Solution</summary>
   
-```
 
 Wrote this script below and name it findimage.sh:
 
+```
 #!/bin/bash
 
 # Get all image IDs
@@ -66,6 +66,8 @@ for image in $images; do
 done
 
 echo "Finished testing all images. No matching output found."
+
+```
 
 
 chmod+x findimage.sh
