@@ -44,8 +44,54 @@ The "Check My Solution" button runs the script `/home/admin/agent/check.sh`, whi
 
 <details>
 <summary>Solution</summary>
-  
+   
+   
+`jq` is ideal for querying structured JSON. The following one-liner filters all volumes and extracts the `InstanceId` from the correct match.
 
+### **Run this command:**
+
+```bash
+jq -r '
+  .Volumes[]
+  | select(.VolumeType=="gp3")
+  | select(.CreateTime < "2025-09-31")
+  | select(.Size < 64)
+  | select(.Iops < 1500)
+  | select(.Throughput > 300)
+  | select(.Attachments | length > 0)
+  | .Attachments[0].InstanceId
+' aws-volumes.json > ~/mysolution
+```
+
+---
+
+# **📌 Explanation of Filters**
+
+| Condition                 | jq Expression                        |              |
+| ------------------------- | ------------------------------------ | ------------ |
+| Type = gp3                | `select(.VolumeType=="gp3")`         |              |
+| Created before 31-09-2025 | `select(.CreateTime < "2025-09-31")` |              |
+| Size < 64                 | `select(.Size < 64)`                 |              |
+| IOPS < 1500               | `select(.Iops < 1500)`               |              |
+| Throughput > 300          | `select(.Throughput > 300)`          |              |
+| Must be attached          | `select(.Attachments                 | length > 0)` |
+| Extract instance          | `.Attachments[0].InstanceId`         |              |
+
+---
+
+# **✅ Validation**
+
+To confirm your solution, run:
+
+```bash
+md5sum ~/mysolution
+```
+
+Expected output:
+
+```
+e7e34463823bf7e39358bf6bb24336d8
+```
 
 
 </details>
