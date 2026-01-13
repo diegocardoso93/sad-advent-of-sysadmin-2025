@@ -22,6 +22,7 @@ Each day, there will be an Advent of Sysadmin scenario.
 | 2025-12-08 | **["Podgorica": Docker to Podman migration](challenges/08podgorica.md)** | Medium |
 | 2025-12-09 | **["Torino": Optimize grande Docker image](challenges/09torino.md)** | Medium |
 | 2025-12-10 | **["Socorro, NM": Optimize Podman image](challenges/10socorro.md)** | Medium |
+| 2025-12-11 | **["Sumé": Tied in a Knot](challenges/11sume.md)** | Medium |
+| 2025-12-12 | **["Karakorum": WTFIT – What The Fun Is This?](challenges/12karakorum.md)** | Hard |
 
 ---
-
