@@ -33,6 +33,34 @@ The "Check My Solution" button runs the script `/home/admin/agent/check.sh`, whi
 <summary>Solution</summary>
   
 
+1) Remove any old containers and perform a *squash* (this reduces layers and usually eliminates the "weight" left in previous layers):
+```bash
+podman rm -f check 2>/dev/null || true
+
+# create a new (squashed) image from the current one.
+buildah commit --squash $(buildah from localhost/prod:latest) localhost/prod:squashed
+
+# replace the original tag with the optimized image.
+podman rmi localhost/prod:latest --force
+podman tag localhost/prod:squashed localhost/prod:latest
+podman rmi localhost/prod:squashed
+
+# confirm that it is less than 200MB.
+podman images localhost/prod:latest --format "table {{.Repository}}:{{.Tag}}\t{{.Size}}"
+```
+
+2) Start the "check" container and validate the 100 lines:
+```bash
+podman run -d --name check -p 8888:80 localhost/prod:latest
+
+curl -s localhost:8888 | wc -l
+```
+
+3) Run the official checker:
+```bash
+/home/admin/agent/check.sh
+```
+
 
 
 </details>

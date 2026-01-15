@@ -48,6 +48,43 @@ The "Check My Solution" button runs the script `/home/admin/agent/check.sh`, whi
   
 
 
+1) Remove the current torino image (916MB)
+```bash
+docker images rm -f torino 2>/dev/null || true
+```
+
+2) In the app's directory, create a very lean Dockerfile (using the smallest available Node image — Alpine for example).
+```bash
+cd ~/torino-app
+
+cat > Dockerfile <<'EOF'
+FROM node:16-alpine
+
+ENV NODE_ENV=production
+WORKDIR /home/node/app
+
+COPY --chown=node:node package*.json app.js ./
+COPY --chown=node:node node_modules ./node_modules
+
+USER node
+EXPOSE 3000
+CMD ["node", "app.js"]
+EOF
+```
+
+3) Execute the application:
+```bash
+docker run -d --name torino -p 3000:3000 torino:latest
+
+curl http://localhost:3000
+```
+
+4) Test the results
+```bash
+/home/admin/agent/check.sh
+```
+
+
 
 </details>
 

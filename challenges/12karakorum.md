@@ -28,6 +28,20 @@ Running /home/admin/wtfit returns OK.
   
 
 
+sudo python3 - << 'EOF'
+import os
+os.chmod("/home/admin/wtfit", 0o755)
+EOF
+
+strings /home/admin/wtfit | grep -i config
+
+
+touch /home/admin/wtfitconfig.conf
+
+
+admin@ip-10-1-12-42:~$ /home/admin/wtfit
+ERROR: can't connect to server
+
 
 </details>
 
